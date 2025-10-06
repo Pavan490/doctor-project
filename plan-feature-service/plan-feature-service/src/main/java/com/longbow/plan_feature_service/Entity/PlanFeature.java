@@ -8,19 +8,10 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import jakarta.validation.constraints.Min;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Size;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "PLAN_FEATURES")
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
+
 public class PlanFeature {
 	 @Id
 	    @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -48,5 +39,73 @@ public class PlanFeature {
 
 	    @Column(name = "UPDATED_AT")
 	    private LocalDateTime updatedAt;
+
+		public Integer getFeatureId() {
+			return featureId;
+		}
+
+		public void setFeatureId(Integer featureId) {
+			this.featureId = featureId;
+		}
+
+		public Integer getPlanId() {
+			return planId;
+		}
+
+		public void setPlanId(Integer planId) {
+			this.planId = planId;
+		}
+
+		public String getFeatureName() {
+			return featureName;
+		}
+
+		public void setFeatureName(String featureName) {
+			this.featureName = featureName;
+		}
+
+		public Integer getFeatureCount() {
+			return featureCount;
+		}
+
+		public void setFeatureCount(Integer featureCount) {
+			this.featureCount = featureCount;
+		}
+
+		public Boolean getIsActive() {
+			return isActive;
+		}
+
+		public void setIsActive(Boolean isActive) {
+			this.isActive = isActive;
+		}
+
+		public LocalDateTime getCreatedAt() {
+			return createdAt;
+		}
+
+		public void setCreatedAt(LocalDateTime createdAt) {
+			this.createdAt = createdAt;
+		}
+
+		public LocalDateTime getUpdatedAt() {
+			return updatedAt;
+		}
+
+		public void setUpdatedAt(LocalDateTime updatedAt) {
+			this.updatedAt = updatedAt;
+		}
+
+		public PlanFeature(Integer featureId, Integer planId, String featureName, Integer featureCount,
+				Boolean isActive, LocalDateTime createdAt, LocalDateTime updatedAt) {
+			super();
+			this.featureId = featureId;
+			this.planId = planId;
+			this.featureName = featureName;
+			this.featureCount = featureCount;
+			this.isActive = isActive;
+			this.createdAt = createdAt;
+			this.updatedAt = updatedAt;
+		}
 
 }
