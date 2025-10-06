@@ -50,7 +50,6 @@ public class Subscription {
     @Column(name = "UPDATED_AT")
     private Date UPDATED_AT;
 
-    // Getters and Setters
     public Integer getSUBSCRIPTION_ID() {
         return SUBSCRIPTION_ID;
     }
